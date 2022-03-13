@@ -1,0 +1,20 @@
+import list 
+
+def Queue:
+    result = []
+
+def put(q, v)
+    atomically:
+        !q =[v,] + !q
+        # !q = list.
+        # !q = list.append(!q, v)
+        # !q = list.reversed(!q)
+
+def get(q):
+    atomically:
+        if !q == []:
+            result = None 
+        else:
+            result = list.head(!q)
+            !q = list.tail(!q)
+
